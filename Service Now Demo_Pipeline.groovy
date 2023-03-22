@@ -73,17 +73,6 @@ println "=============================================="
       subprocedure = 'RunCommand'
       taskType = 'COMMAND'
     }
-
-    task 'Show Pipeline Data', {
-      actualParameter = [
-        'basePath': 'myPipeline',
-        'myProjectName': 'ServiceNow',
-        'pipelineName': 'Service Now Demo',
-      ]
-      subprocedure = 'pipelineTrace'
-      subproject = 'Utilities'
-      taskType = 'PROCEDURE'
-    }
   }
 
   stage 'Assess', {
@@ -149,20 +138,9 @@ println "=============================================="
       subprocedure = 'RunCommand'
       taskType = 'COMMAND'
     }
-
-    task 'Show Assess Pipeline Data', {
-      actualParameter = [
-        'basePath': 'myPipeline',
-        'myProjectName': 'ServiceNow',
-        'pipelineName': 'Service Now Demo',
-      ]
-      subprocedure = 'pipelineTrace'
-      subproject = 'Utilities'
-      taskType = 'PROCEDURE'
-    }
   }
 
-  stage 'Schedule & Implement', {
+  stage 'Implement', {
     colorCode = '#2ca02c'
     pipelineName = 'Service Now Demo'
     gate 'POST', {
